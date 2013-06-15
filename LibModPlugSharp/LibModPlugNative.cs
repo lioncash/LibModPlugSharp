@@ -18,9 +18,13 @@ namespace LibModPlugSharp
 		/// <returns>An IntPtr handle to the loaded module file.</returns>
 		public static IntPtr LoadFile(string fileName)
 		{
-			FileStream fs = new FileStream(fileName, FileMode.Open);
-			byte[] modFile = new byte[fs.Length];
-			fs.Read(modFile, 0, modFile.Length);
+			byte[] modFile;
+			
+			using (FileStream fs = new FileStream(fileName, FileMode.Open))
+			{
+				modFile = new byte[fs.Length];
+				fs.Read(modFile, 0, modFile.Length);
+			}
 
 			return ModPlug_Load(modFile, modFile.Length);
 		}
