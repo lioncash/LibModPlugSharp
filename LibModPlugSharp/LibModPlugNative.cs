@@ -63,13 +63,13 @@ namespace LibModPlugSharp
 
 		/// <summary>
 		/// Encapsulates ModPlug_Seek. Seeks to a particular position in the song.
-		/// <br/>
+		/// <para></para>
 		/// Note that seeking and MODs don't mix very well. <br/>
 		/// Some mods will be missing instruments for a short time after a seek, as
 		/// ModPlug does not scan the sequence backwards to find out which instruments
 		/// were supposed to be playing at that time. (Doing so would be difficult and not
 		/// very reliable).
-		/// <br/>
+		/// <para></para>
 		/// Also , note that seeking is not very exact in some mods -- especially for those
 		/// which ModPlug_GetLength() does not report the full length.
 		/// </summary>
@@ -97,7 +97,7 @@ namespace LibModPlugSharp
 		/// <remarks>
 		/// All options, except for channels, bits-per-sample, sampling rate, and loop count,
 		/// will take effect immediately.
-		/// <br/>
+		/// <para></para>
 		/// Those options which don't take effect immediately
 		/// </remarks>
 		/// <param name="newSettings">Reference to a <see cref="LibModPlugSettings"/> struct.</param>
@@ -323,14 +323,14 @@ namespace LibModPlugSharp
 
 		/// <summary>
 		/// Seeks to a particular position in the song.
-		/// <br/>
+		/// <para></para>
 		/// Note that seeking and MODs don't mix very well. <br/>
 		/// Some mods will be missing instruments for a short time after a seek, as
 		/// ModPlug does not scan the sequence backwards to find out which instruments
 		/// were supposed to be playing at that time. (Doing so would be difficult and not
 		/// very reliable).
-		/// <br/>
-		/// Also , note that seeking is not very exact in some mods -- especially for those
+		/// <para></para>
+		/// Also, note that seeking is not very exact in some mods -- especially for those
 		/// which ModPlug_GetLength() does not report the full length.
 		/// </summary>
 		/// <param name="modFileHandle">The handle to the currently loaded mod file.</param>
@@ -351,7 +351,7 @@ namespace LibModPlugSharp
 		/// <remarks>
 		/// All options, except for channels, bits-per-sample, sampling rate, and loop count,
 		/// will take effect immediately.
-		/// <br/>
+		/// <para></para>
 		/// Those options which don't take effect immediately
 		/// </remarks>
 		/// <param name="modplugSettings">Reference to a <see cref="LibModPlugSettings"/> struct.</param>
