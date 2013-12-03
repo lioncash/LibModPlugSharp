@@ -18,14 +18,10 @@ namespace LibModPlugSharp
 		/// <returns>An IntPtr handle to the loaded module file.</returns>
 		public static IntPtr LoadFile(string fileName)
 		{
-			byte[] modFile;
-			
-			using (FileStream fs = new FileStream(fileName, FileMode.Open))
-			{
-				modFile = new byte[fs.Length];
-				fs.Read(modFile, 0, modFile.Length);
-			}
+			if (string.IsNullOrEmpty(fileName))
+				throw new ArgumentException("fileName cannot be empty or null.", "fileName");
 
+			byte[] modFile = File.ReadAllBytes(fileName);
 			return ModPlug_Load(modFile, modFile.Length);
 		}
 
